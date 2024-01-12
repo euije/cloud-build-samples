@@ -16,6 +16,9 @@
 steps:
 # Install dependencies
 - name: node
+  entrypoint: node
+  args: ['-v']
+- name: node
   entrypoint: corepack
   args: ['enable']
 - name: node
