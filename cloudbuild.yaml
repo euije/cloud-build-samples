@@ -17,6 +17,15 @@ steps:
 # Install dependencies
 - name: node
   entrypoint: yarn
+  args: []
+- name: node
+  entrypoint: yarn
+  args: ['--version']
+- name: node
+  entrypoint: yarn
+  args: ['set version 3.6.4']
+- name: node
+  entrypoint: yarn
   args: ['install']
 # Run tests
 - name: node
