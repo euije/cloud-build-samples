@@ -20,7 +20,7 @@ steps:
   args: ['enable']
 - name: node
   entrypoint: corepack
-  args: ['install --global yarn@stable ']
+  args: ['install --global yarn@3.6.4']
 - name: node
   entrypoint: yarn
   args: ['--version']
