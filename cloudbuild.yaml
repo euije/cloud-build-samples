@@ -19,7 +19,8 @@ steps:
   entrypoint: corepack
   args: ['enable']
 - name: node
-  args: ['corepack install --global yarn@3.6.4']
+  entrypoint: corepack
+  args: ['install', '--global', 'yarn@3.6.4']
 - name: node
   entrypoint: yarn
   args: ['--version']
