@@ -19,11 +19,15 @@ steps:
   entrypoint: node
   args: ['-v']
 - name: node
-  entrypoint: corepack
-  args: ['enable']
-- name: node
-  entrypoint: corepack
-  args: ['install', '--global', 'yarn@3.6.4']
+  entrypoint: bash
+  args:
+    - '-c'
+    - |
+      corepack enable
+      corepack install --global yarn@3.6.4
+      yarn config set enableGlobalCache true
+      yarn config set globalFolder .yarn-cache
+  
 - name: node
   entrypoint: yarn
   args: ['--version']
