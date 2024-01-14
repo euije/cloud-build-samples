@@ -33,14 +33,21 @@ steps:
     - |
       corepack yarn -v
 - name: node
-  entrypoint: yarn
-  args: ['install']
-# Run tests
+  entrypoint: bash
+  args:
+    - '-c'
+    - |
+      corepack yarn
+      corepack yarn install
 - name: node
-  entrypoint: yarn
-  args: ['test']
-# Run custom commands
+  entrypoint: bash
+  args:
+    - '-c'
+    - |
+      corepack yarn build
 - name: node
-  entrypoint: yarn
-  args: ['run', 'build']
-# [END cloudbuild_yarn_node]
+  entrypoint: bash
+  args:
+    - '-c'
+    - |
+      corepack yarn test
